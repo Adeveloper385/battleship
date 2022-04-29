@@ -57,8 +57,10 @@ class BattleshipBoard:
 
 def read_guess(already_guessed: Callable[[int, int], bool]) -> tuple[int, int]:
     while True:
-        guess_row = read_int("Guess Row: ", min_value=1, max_value=BOARD_SIZE_X) - 1
-        guess_col = read_int("Guess Col: ", min_value=1, max_value=BOARD_SIZE_Y) - 1
+        guess_row = read_int(
+            "Guess Row: ", min_value=1, max_value=BOARD_SIZE_X) - 1
+        guess_col = read_int(
+            "Guess Col: ", min_value=1, max_value=BOARD_SIZE_Y) - 1
 
         if not already_guessed(guess_row, guess_col):
             return guess_row, guess_col
